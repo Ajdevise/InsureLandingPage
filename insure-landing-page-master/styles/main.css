@@ -260,10 +260,12 @@ p {
   transition: color .3s .3s;
 }
 
-.nav__link:hover::before {
-  -webkit-transform: scaleY(1) translateY(-50%);
-          transform: scaleY(1) translateY(-50%);
-  width: 100%;
+@media (min-width: 48.75em) {
+  .nav__link:hover::before {
+    -webkit-transform: scaleY(1) translateY(-50%);
+            transform: scaleY(1) translateY(-50%);
+    width: 100%;
+  }
 }
 
 .nav__link:hover {
