@@ -1,0 +1,102 @@
+.nav{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2rem $padding-sides; 
+    z-index: -1;
+
+    &__logo{
+        margin-right: auto;
+    }
+
+    &__links{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: goldenrod;
+        width: 100%;
+        min-height: calc(100vh - 5.8125rem);
+        text-align: center;
+        background-color: $very-dark-violet;
+        padding: 1.5rem;
+        background-image: url("/images/bg-pattern-mobile-nav.svg");
+        background-repeat: no-repeat;
+        background-position: bottom right; 
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top left;
+
+        @include breakpoint-up(medium){
+            position: static;
+            min-height: fit-content;
+            opacity: 1;
+            transform: scaleY(1);
+            background-color: transparent;
+            background-image: none;
+            display: flex;
+            padding: 0;
+            width: fit-content;
+        }
+    }
+
+    &__link{
+        position: relative;
+        display: block;
+        color: white;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        padding: 1rem;
+        letter-spacing: .1rem;
+        transition: color .3s .3s;
+
+        &:hover::before{
+            transform: scaleY(1)  translateY(-50%);
+            width: 100%;
+        }
+
+        &:hover{
+            color: white;
+        }
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 100%;
+            width: 2%;
+            transform: scaleY(0) translateY(-50%);
+            background-color: $dark-violet;
+            transform-origin: top center;
+            z-index: -1;
+            transition: transform .3s ease-in-out, width .2s linear .3s;
+        }
+
+        @include breakpoint-up(medium){
+            color: $dark-violet;
+            font-size: 1rem;
+        }
+    }
+
+    .link{
+        opacity: 0;
+        visibility: hidden;
+
+        @include breakpoint-up(medium){
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    button{
+        margin: 1rem 0;
+        width: 100%;
+
+        @include breakpoint-up(medium){
+            border-color: $dark-violet;
+            color: $dark-violet;
+            width: fit-content;
+            margin: 0;
+        }
+    }
+}

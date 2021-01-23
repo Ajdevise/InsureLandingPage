@@ -1,0 +1,112 @@
+.footer{
+    background-image: url("../../images/bg-pattern-footer-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-color: darken($very-light-gray, 2%);
+
+    @include breakpoint-up(medium){
+        background-image: url("../../images/bg-pattern-footer-desktop.svg");
+    }
+
+    &__content{
+        text-align: center;
+        text-transform: uppercase;
+        padding: 3rem $padding-sides;
+
+        @include breakpoint-up(medium){
+            text-align: left;
+        }
+    }
+
+    &__top{
+        @include breakpoint-up(medium){
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__bottom{
+        @include breakpoint-up(medium){
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    }
+
+    &__group{
+
+        &:not(:last-child){
+            margin-bottom: 2rem;
+            @include breakpoint-up(medium){
+                margin-bottom: 0;
+            }
+        }
+
+        h3{
+            font-family: 'Karla', sans-serif;
+            color: #777; 
+            font-size: .9rem;
+            margin-bottom: 2rem;
+            
+        }
+
+        a,
+        a:visited{
+            display: block;
+            color: $dark-violet;
+            position: relative;
+            @include breakpoint-up(medium){
+                padding-right: 1rem;
+            }
+            
+
+            &:not(:last-child){
+                margin-bottom: .5rem;
+            }
+
+            &:hover::after{
+                @include breakpoint-up(large){
+                    transform: scale(1);
+                }
+            }
+
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 3px;
+                height: 100%;
+                transform: scale(0);
+                transition: all .2s;
+                background-color: $dark-violet; 
+            }
+        }
+    }
+
+    &__socials{
+        margin-top: 2rem;
+
+        @include breakpoint-up(medium){
+            margin-top: 0;
+        }
+
+        svg:not(:last-child){
+            margin-right: .8rem;
+        }
+
+        svg:hover{
+            cursor: pointer;
+        }
+
+        svg:hover > path{
+            fill: $dark-violet;
+        }
+    }
+
+    hr{
+        color: rgba($very-light-gray, .45);
+        margin: 2rem 0;
+    }
+}

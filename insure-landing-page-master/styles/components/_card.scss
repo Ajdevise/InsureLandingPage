@@ -1,0 +1,12 @@
+.card{
+    margin-bottom: 5rem;
+
+    &__heading{
+        font-size: 1.5rem;
+        letter-spacing: 1px; 
+    }
+
+    &__paragraph{
+        color: $dark-grayish-violet;
+    }   
+}

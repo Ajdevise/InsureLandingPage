@@ -1,0 +1,119 @@
+.hero{
+    background-color: $very-dark-violet;
+    position: relative;
+
+    &::before,
+    &::after{
+        content: "";
+        position: absolute;
+    }
+
+    &::before{
+        top: 60%;
+        transform: translateY(-50%);
+        width: 7.9375rem;
+        height: 20rem;
+        background-image: url("../../images/bg-pattern-intro-left-mobile.svg");
+        background-repeat: no-repeat;
+
+        @include breakpoint-up(helper){
+            top: 77%;
+            
+        }
+
+        @include breakpoint-up(medium){
+            background-image: url("../../images/bg-pattern-intro-left-desktop.svg");
+            top: 100%;
+            width: 13rem;
+            height: 32rem;
+        }
+    }
+
+    .smallBorderTop{
+        display: none;
+        background-color: white;
+        @include breakpoint-up(large){
+            display: block;
+        }
+    }
+
+    &::after{
+        bottom: -17%;
+        right: 0;
+        width: 7.9375rem;
+        height: 20rem;
+        background-image: url("../../images/bg-pattern-intro-right-mobile.svg");
+        background-repeat: no-repeat;
+
+        
+
+        @include breakpoint-up(medium){
+            background-image: url("../../images/bg-pattern-intro-right-desktop.svg");
+            top: 0%;
+            width: 27rem;
+            height: 38rem;
+            right: -20%;
+        }
+
+        @include breakpoint-up(helperml){
+            right: -10%;
+        }
+
+        @include breakpoint-up(large){
+            right: 0;
+        }
+
+        
+        
+    }
+
+    &__image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        
+        @include breakpoint-up(medium){
+            transform: translateY(3rem);
+        }
+
+        @include breakpoint-up(large){
+            transform: translateY(6rem);
+        }
+    }
+
+    &__header{
+        padding: 6rem $padding-sides;
+        text-align: center;
+        position: relative;
+
+        @include breakpoint-up(medium){
+            grid-row: 1 / 2;
+            grid-column: 1 / 2; 
+            text-align: left;
+            padding-left: 0;
+        }
+    }
+
+    button{
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    &__content{
+        // min-height: 100vh;
+
+        @include breakpoint-up(medium){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            place-content: center;
+            padding: 0 1.5rem;
+            align-items: center;
+            grid-gap: 2rem;
+        }
+
+        @include breakpoint-up(large){
+            grid-gap: 7rem;
+        }
+    }
+}

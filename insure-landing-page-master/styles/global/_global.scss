@@ -1,0 +1,92 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 100%;
+    font-family: Karla, sans-serif, Arial;
+    overflow-x: hidden;
+
+    @media screen and (max-width: 350px){
+        font-size: 70%;
+    }
+}
+
+body{
+    font-size: 16px;
+    margin: 0;
+}
+
+.no-scroll{
+    overflow: hidden;
+}
+
+h1, 
+h2, 
+h3,
+h4,
+h5{
+    font-family: 'DM Serif Display', serif;
+}
+
+.hide-for-desktop{
+    @include breakpoint-up(medium){
+        display: none;
+    }
+}
+
+.hide-for-mobile{
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.container{
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+a,
+a:visited{
+    text-decoration: none;
+}
+
+h1{
+    font-size: 2.8rem;
+    color: white; 
+    line-height: 1;
+    font-weight: 400;
+    margin: 0;
+
+    @include breakpoint-up(large){
+        font-size: 3.4rem;
+    }
+}
+
+h2,
+h3{
+    color: lighten(#000, 25%);
+}
+
+h2{
+    font-size: 2.6rem;
+}
+
+p{
+    // margin-bottom: 0;
+    line-height: 1.6;
+    color: darken(white, 12%); 
+}
+
+.smallBorderTop{
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 5rem;
+    background-color: red;
+}

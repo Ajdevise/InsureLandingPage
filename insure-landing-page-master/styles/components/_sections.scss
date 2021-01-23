@@ -1,0 +1,69 @@
+.different{
+    padding: 5rem $padding-sides;
+    text-align: center;
+    position: relative;
+    @include breakpoint-up(large){
+        text-align: left;
+        padding: 15rem $padding-sides 5rem $padding-sides;
+    }
+
+    h2{
+        position: relative;
+        margin-bottom: 6rem;
+        @include breakpoint-up(large){
+            color: #111;
+        }
+    }
+
+    .smallBorderTop{
+        left: 50%;
+        transform: translateX(-50%);
+        top: 5rem;
+        background-color: $dark-violet;
+
+        @include breakpoint-up(large){
+            left: $padding-sides;
+            top: 14rem;
+            transform: translateX(0);
+        }
+    }
+
+    &__cards{
+        @include breakpoint-up(large){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 3rem;
+        }
+    }
+}
+
+.find-out{
+    padding: 0 $padding-sides;
+    text-align: center;
+    
+
+    &__content{
+        padding: 4rem 2rem;
+        background-color: $dark-violet; 
+        background-image: url("../../images/bg-pattern-how-we-work-mobile.svg");
+        background-repeat: no-repeat;
+        background-position: top right;
+        margin-bottom: 5rem;
+
+        @include breakpoint-up(large){
+            display: flex;
+            align-items: center;
+            text-align: left;  
+            justify-content: space-between;
+        }
+
+        @include breakpoint-up(large){
+            background-image: url("../../images/bg-pattern-how-we-work-desktop.svg");
+        }
+    }
+
+    h2{
+        color: white;
+        font-weight: 400;
+    }
+}
