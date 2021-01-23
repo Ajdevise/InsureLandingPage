@@ -61,9 +61,5 @@ function removeNoScroll(){
     html.classList.remove("no-scroll");
 }
 
-window.addEventListener("focus", () => {
-    if(firstTime) {
-        setTimeout(onLoadAnimation, 220);
-        firstTime = false;
-    }
-})
+
+setTimeout(onLoadAnimation, 220);
