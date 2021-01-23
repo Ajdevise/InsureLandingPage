@@ -1,6 +1,7 @@
 const hamburger = document.querySelector(".hamburger");
 const body = document.querySelector("body");
 const html = document.querySelector("html");
+let firstTime = true;
 
 let tl = gsap.timeline();
 
@@ -60,4 +61,9 @@ function removeNoScroll(){
     html.classList.remove("no-scroll");
 }
 
-setTimeout(onLoadAnimation, 220);
+window.addEventListener("focus", () => {
+    if(firstTime) {
+        setTimeout(onLoadAnimation, 220);
+        firstTime = false;
+    }
+})
